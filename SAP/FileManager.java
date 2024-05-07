@@ -8,8 +8,6 @@ public class FileManager {
     private static final String FILENAME = "products.txt";
 
     public static void saveToFile(ArrayList<Product> products) {
-        // why the print writer in is the try clause!!!
-        // try-with-resource!!!
         try (PrintWriter writer = new PrintWriter(new FileWriter(FILENAME))) {
             for (Product product : products) {
                 writer.println(product.getName() + "," + product.getPrice());
